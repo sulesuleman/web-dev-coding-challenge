@@ -1,0 +1,28 @@
+.group-input{ 
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 1;    
+    
+    
+    .searchbar {
+    border: none;
+    background-color: white;
+    color: black;
+    height: 40px;
+    width: 100%;
+    padding: 0px 10px;
+    line-height: 20px;
+    font-size: 16px;
+    z-index: 1;
+
+    &::placeholder {
+        font-size: 14px;
+        color: rgb(153, 152, 152);
+    }
+
+    &:focus {
+        outline: none;
+    }
+    }
+}
