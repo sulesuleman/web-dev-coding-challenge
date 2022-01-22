@@ -1,6 +1,7 @@
 .container {
     background: url('../assets/images/landing-image.jpg') center no-repeat;
     background-size: cover;
+    padding:0px 0px 40px 0px !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,6 +33,10 @@
             animation-duration: 2s;
             animation-iteration-count: infinite;
             animation-direction: alternate;
+        }
+
+        .btn-group{
+            margin: auto;
         }
     }
 

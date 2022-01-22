@@ -5,5 +5,5 @@ import { HomePage, ArtistListPage, EventListPage } from "../pages";
 export const routes = [
     { path: "/", element: <HomePage /> },
     { path: "/artists", element: <ArtistListPage /> },
-    { path: "/events/:name", element: <EventListPage /> },
+    { path: "/artists/:name/events", element: <EventListPage /> },
 ]

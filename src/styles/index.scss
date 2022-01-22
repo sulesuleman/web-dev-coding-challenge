@@ -1,7 +1,15 @@
+
+//variables//
+@import './globals.scss';
+@import './variables.scss';
+
 //Pages//
 @import './home.page.scss';
 @import './artists.page.scss';
+@import './event.page.scss';
 //Components//
 @import './search.component.scss';
 @import './image.component.scss';
 @import './button.component.scss';
+@import './card.component.scss';
+@import './eventcard.component.scss';

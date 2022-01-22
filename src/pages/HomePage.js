@@ -12,7 +12,9 @@ const Home = () => {
                 <form onSubmit={handleSubmit} className="form-section">
                     <p>Bands In Town</p>
                     <Searchbar />
-                    <Button styles={'btn-grad'}>Search</Button>
+                    <div className="btn-group">
+                        <Button styles={'btn-grad'}>Search</Button>
+                    </div>
                 </form>
             </div>
         </main>
