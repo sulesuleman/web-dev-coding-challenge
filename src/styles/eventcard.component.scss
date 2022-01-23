@@ -1,8 +1,8 @@
 @import './variables.scss';
 
 .event-card-container {
-    max-width: 350px;
-    width: 100%;
+    // max-width: 350px;
+    width: 385px;
     padding: 8px 10px;
     background-color: $white;
     border: 1px solid $white;
@@ -36,11 +36,11 @@
 
             .heading {
                 color: $black;
-                font-family: Poppins-SemiBold;
+                font-family: Poppins-Regular;
                 font-size: 16px;
             }
             .subheading {
-                color: $gray;
+                color: $dim-gray;
                 font-family: Poppins-Regular;
                 font-size: 15px;
             }

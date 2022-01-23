@@ -19,7 +19,8 @@ export function AppWrapper({ children }) {
         };
     }
 
-    const _HandleSearchSubmit = async () => {
+    const _HandleSearchSubmit = async (e) => {
+        e.preventDefault();
         //if search field is empty and submitted, show nothing//
         if (search) {
             await localStorage.setItem('artist', search);

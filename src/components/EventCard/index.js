@@ -4,9 +4,7 @@ import { motion } from 'framer-motion';
 const EventCard = ({ name = '', city = '', country = '', datetime = '' }) => {
     return (
         <motion.div variants={item} className="event-card-container">
-            <div className="header">
-                <p>EVENT DETAILS</p>
-            </div>
+            <p className="header">EVENT DETAILS</p>
             <div className="content">
                 <div className="row">
                     <div className="col">

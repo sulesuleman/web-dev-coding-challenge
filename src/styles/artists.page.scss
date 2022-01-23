@@ -37,7 +37,8 @@
             h1 {
                 text-transform: uppercase;
                 font-family: Poppins-Bold;
-                font-size: 36px;
+                font-size: 50px;
+                margin-bottom: 0;
                 color: $white;
             }
 
@@ -57,9 +58,10 @@
 }
 
 .content-container {
-    background-color: $dim-gray;
+    background-color: $light-black;
     @include padding;
     row-gap: 20px;
+    padding-bottom: 25px;
 
 }
 
