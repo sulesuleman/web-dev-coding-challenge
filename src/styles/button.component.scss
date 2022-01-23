@@ -1,5 +1,7 @@
+@import './variables.scss';
+
 .btn-grad {
-    background-image: linear-gradient(to right, #DC2424 0%, #4A569D 51%, #DC2424 100%)
+    background-image: linear-gradient(to right, $red 0%, $blue 51%, $red 100%)
 }
 
 .btn-grad {
@@ -10,7 +12,7 @@
     text-transform: uppercase;
     transition: 0.5s;
     background-size: 200% auto;
-    color: white;
+    color: $white;
     //box-shadow: 0 0 20px #eee;
     border-radius: 10px;
     cursor: pointer;
@@ -28,6 +30,6 @@
 .btn-grad:hover {
     background-position: right center;
     /* change the direction of the change here */
-    color: #fff;
+    color: $white;
     text-decoration: none;
 }

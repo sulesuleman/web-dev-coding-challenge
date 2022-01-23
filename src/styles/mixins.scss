@@ -1,0 +1,10 @@
+@import './variables.scss';
+
+@mixin description {
+    color: $white;
+    font-family: Poppins-Regular;
+}
+
+@mixin padding {
+    padding: 12px 40px;
+}

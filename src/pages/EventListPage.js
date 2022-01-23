@@ -3,11 +3,10 @@ import { motion } from 'framer-motion';
 import { UseFetchEvents } from 'hooks';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { artists } from 'services/consts';
 
 const EventListPage = () => {
 
-    const { search, singer, artistEvents } = UseFetchEvents();
+    const { singer, artistEvents } = UseFetchEvents();
     const navigate = useNavigate()
     return (
         <div className="event-screen">

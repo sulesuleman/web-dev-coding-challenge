@@ -1,5 +1,7 @@
 import React from "react";
 import { useSearchContext } from "context";
+import { Icon } from "components";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Searchbar = () => {
 
@@ -13,6 +15,7 @@ const Searchbar = () => {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
             />
+            <Icon icon={faSearch} className={"icon"} />
         </div>
     );
 };

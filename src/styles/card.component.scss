@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .card {
   position: relative;
   display: flex;
@@ -5,19 +7,19 @@
   width: 100%;
   max-width: 350px;
   cursor: pointer;
-  border: 1px solid white;
-  
+  border: 1px solid $white;
+
   .content {
     position: absolute;
     bottom: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 4px 8px;
-    color: #fff;
+    color: $white;
 
     h1 {
       font-family: Poppins-Regular;
-    margin: 0px;
+      margin: 0px;
     }
 
     p {
@@ -29,42 +31,58 @@
   }
 }
 
-.expanded-card {
+.expanded-card-overlay {
+  display: flex;
+  /* Hidden by default */
   position: fixed;
-  top: 5%;
-  left: 35%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: hidden;
+  /* Enable scroll if needed */
+  background-color: $black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
 
-  .expanded-card-image {
+  .expanded-card {
+    background-color: $white;
+    margin: auto;
+    border: 1px solid #888;
+    max-width:500px;
+    width:80%;
     box-shadow: 23px -97px 94px -26px rgba(0, 0, 0, 0.66) inset;
     -webkit-box-shadow: 23px -97px 94px -26px rgba(0, 0, 0, 0.66) inset;
     -moz-box-shadow: 23px -97px 94px -26px rgba(0, 0, 0, 0.66) inset;
-  }
 
-  .expanded-card-section {
-    position: relative;
-    width: 100%;
-    height: auto;
-  }
+    .expanded-card-image{
+      height:400px;
+      width:100%;
+      object-fit: cover;
+    } 
+    .content {
+      width: 100%;
+      background-color: $dim-gray;
+      padding: 1px 20px 20px  20px;
+    }
 
-  .content {
-    position: absolute;
-    width: 100%;
-    background-color: #181818;
-    padding: 0px 20px;
-  }
-  .content > h1{
+    .content>h1 {
       font-family: Poppins-Bold;
       font-size: 24px;
-      color:#ffff;   
-  } 
-  .content > h2{
+      margin-bottom: 0px;
+      color: $white;
+    }
+
+    .content>h2 {
       font-family: Poppins-Regular;
       font-size: 18px;
-      color:#ffff;   
-  } 
+      word-break: break-all;
+      color: $white;
+    }
+  }
 }

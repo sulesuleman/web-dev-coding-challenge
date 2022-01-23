@@ -10,7 +10,8 @@ const Home = () => {
         <main className="container">
             <div className='section-overlay'>
                 <form onSubmit={handleSubmit} className="form-section">
-                    <p>Bands In Town</p>
+                    <h1>Bands In Town</h1>
+                    <p>Discover concerts for your favourite artists</p>
                     <Searchbar />
                     <div className="btn-group">
                         <Button styles={'btn-grad'}>Search</Button>

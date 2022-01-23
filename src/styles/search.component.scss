@@ -1,26 +1,35 @@
+@import './variables.scss';
+
 .group-input{ 
     position: relative;
     display: flex;
     align-items: center;
-    
+    width: 100%;
     
     .searchbar {
     border: none;
-    background-color: white;
+    background-color: $white;
     color: black;
     height: 40px;
     width: 100%;
     padding: 0px 10px;
-    line-height: 20px;
     font-size: 16px;
 
     &::placeholder {
-        font-size: 14px;
-        color: rgb(153, 152, 152);
+        font-size: 16px;
+        color: $gray;
     }
 
     &:focus {
         outline: none;
     }
+    }
+
+    .icon{
+        position: absolute;
+        right: 10px;
+        font-size: 20px;
+        color:$dim-gray;
+        pointer-events: none;
     }
 }

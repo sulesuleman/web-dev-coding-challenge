@@ -6,10 +6,14 @@ const UseFetchHome = () => {
     const { search, _HandleSearchSubmit } = useSearchContext();
     const navigate = useNavigate();
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         if (search) {
             _HandleSearchSubmit();
             navigate(`/artists`);
+        }
+        else {
+            e.preventDefault();
         }
     }
 

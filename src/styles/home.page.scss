@@ -1,7 +1,11 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+
 .container {
     background: url('../assets/images/landing-image.jpg') center no-repeat;
     background-size: cover;
-    padding:0px 0px 40px 0px !important;
+    padding: 0px 0px 40px 0px !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,13 +25,14 @@
     .form-section {
         max-width: 400px;
         width: 100%;
-        display: inline-flex;
+        display: flex;
         flex-direction: column;
+        justify-content: space-between ;
         gap: 10px;
 
-        &:first-child {
+        h1 {
             font-size: 40px;
-            color: rgb(255, 255, 255);
+            color: white;
             text-align: center;
             animation-name: glow;
             animation-duration: 2s;
@@ -35,7 +40,13 @@
             animation-direction: alternate;
         }
 
-        .btn-group{
+        p {
+            @include description;
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .btn-group {
             margin: auto;
         }
     }
