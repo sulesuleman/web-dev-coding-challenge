@@ -5,11 +5,16 @@ import { artists } from 'services/consts';
 const SearchContext = createContext();
 
 export function AppWrapper({ children }) {
-    const [search, setSearch] = useState('');
+    //if cache is empty store empty state else store cache value//
+    const [search, setSearch] = useState(() => {
+        let initialSearch = localStorage.getItem('artist')
+        if (initialSearch) return initialSearch;
+        else return '';
+    });
     const [singer, setSinger] = useState({});
 
 
-    const getArtists = async (search) => {
+    const getArtists = async () => {
         try {
             const { data } = await getRequest(artists(search));
             setSinger(data);
@@ -20,8 +25,8 @@ export function AppWrapper({ children }) {
     }
 
     const _HandleSearchSubmit = async (e) => {
+        //if search field is empty and submitted, dont call Api//
         e.preventDefault();
-        //if search field is empty and submitted, show nothing//
         if (search) {
             await localStorage.setItem('artist', search);
             getArtists(search);
@@ -29,13 +34,8 @@ export function AppWrapper({ children }) {
     };
 
     useEffect(() => {
-        // if already search Artist Name, list them//
-        const cache = localStorage.getItem('artist');
-        if (cache) {
-            setSearch(cache);
-            getArtists(cache);
-        }
-    }, [])
+        localStorage.setItem('artist', search);
+    }, [search])
 
     //dont compute again and again, if same name is searched again, get it from the cache//
     const data = useMemo(
@@ -43,6 +43,7 @@ export function AppWrapper({ children }) {
             search,
             singer,
             setSearch,
+            getArtists,
             _HandleSearchSubmit,
         }),
         [search, singer]
@@ -51,6 +52,7 @@ export function AppWrapper({ children }) {
     return <SearchContext.Provider value={data}>{children}</SearchContext.Provider>;
 }
 
+//hook to fetch state and functions in every component//
 export const useSearchContext = () => {
     return useContext(SearchContext);
 };

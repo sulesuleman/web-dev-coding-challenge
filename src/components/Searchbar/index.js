@@ -1,7 +1,7 @@
 import React from "react";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useSearchContext } from "context";
 import { Icon } from "components";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Searchbar = () => {
 

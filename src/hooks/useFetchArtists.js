@@ -7,7 +7,7 @@ const UseFetchArtists = () => {
 
     const navigate = useNavigate();
     const popupRef = React.createRef();
-    const { singer, search } = useSearchContext();
+    const { singer, search, getArtists } = useSearchContext();
 
     const [popup, setPopup] = useState(false);
 
@@ -16,6 +16,7 @@ const UseFetchArtists = () => {
         setPopup(!popup);
         navigate(`/artists/${search}/events`);
     }
+
     const togglePopup = async () => {
         setPopup(!popup);
     }
@@ -24,10 +25,11 @@ const UseFetchArtists = () => {
         setPopup(false);
     });
 
-
     useEffect(() => {
-        setPopup(false);
-    }, [search])
+        if (search) {
+            getArtists();
+        }
+    }, [])
 
     return {
         gotoArtistDetailPage, togglePopup, singer, search, popup, popupRef
